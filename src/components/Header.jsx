@@ -1,5 +1,5 @@
-function Header() {
-	const PageStyle = { backgroundColor: "rgba(0,0,0,0.4)", color: "#ff6a95" };
+function Header({ bgColor, textColor }) {
+	const PageStyle = { backgroundColor: bgColor, color: textColor };
 	return (
 		<header style={PageStyle}>
 			<div className="container">
@@ -9,4 +9,8 @@ function Header() {
 	);
 }
 
+Header.defaultProps = {
+	bgColor: "rgba(0,0,0,0.4)",
+	textColor: "#ff6a95",
+};
 export default Header;
