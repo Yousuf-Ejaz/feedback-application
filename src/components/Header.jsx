@@ -11,6 +11,6 @@ function Header({ bgColor, textColor }) {
 
 Header.defaultProps = {
 	bgColor: "rgba(0,0,0,0.4)",
-	textColor: "#ff6a95",
+	textColor: "#FB8122",
 };
 export default Header;

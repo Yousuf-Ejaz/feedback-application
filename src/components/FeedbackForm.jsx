@@ -54,7 +54,7 @@ function FeedbackForm() {
 				<div className="input-group">
 					<input
 						type="text"
-						placeholder="Write a review"
+						placeholder=" Write a review"
 						onChange={getText}
 						value={text}
 					/>

@@ -11,10 +11,10 @@ function FeedbackItem({ item }) {
 			<div className="num-display">{item.rating}</div>
 			<div className="text-display">{item.text}</div>
 			<button onClick={() => deleteFeedback(item.id)} className="close">
-				<FaTimes color="purple" />
+				<FaTimes color="#7e4111" />
 			</button>
 			<button onClick={() => editFeedback(item)} className="edit">
-				<FaEdit color="purple" />
+				<FaEdit color="#7e4111" />
 			</button>
 		</Card>
 	);
