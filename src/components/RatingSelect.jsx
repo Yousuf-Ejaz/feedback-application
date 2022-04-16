@@ -1,7 +1,15 @@
-import { useState } from "react";
+import { useState, useEffect, useContext } from "react";
+
+import FeedbackContext from "../context/FeedbackContext";
 
 function RatingSelect({ select }) {
 	const [selected, setSelected] = useState(10);
+
+	const { feedbackEdit } = useContext(FeedbackContext);
+	useEffect(() => {
+		setSelected(feedbackEdit.item.rating);
+	}, [feedbackEdit]);
+
 	const handleChange = (e) => {
 		setSelected(+e.currentTarget.value);
 		select(+e.currentTarget.value);
@@ -15,8 +23,8 @@ function RatingSelect({ select }) {
 					name="rating"
 					id="num1"
 					value="1"
+					checked={selected === 1}
 					onChange={handleChange}
-					selected={selected === 1}
 				/>
 				<label htmlFor="num1">1</label>
 			</li>
@@ -27,7 +35,7 @@ function RatingSelect({ select }) {
 					id="num2"
 					value="2"
 					onChange={handleChange}
-					selected={selected === 2}
+					checked={selected === 2}
 				/>
 				<label htmlFor="num2">2</label>
 			</li>
@@ -38,7 +46,7 @@ function RatingSelect({ select }) {
 					id="num3"
 					value="3"
 					onChange={handleChange}
-					selected={selected === 3}
+					checked={selected === 3}
 				/>
 				<label htmlFor="num3">3</label>
 			</li>
@@ -49,7 +57,7 @@ function RatingSelect({ select }) {
 					id="num4"
 					value="4"
 					onChange={handleChange}
-					selected={selected === 4}
+					checked={selected === 4}
 				/>
 				<label htmlFor="num4">4</label>
 			</li>
@@ -60,7 +68,7 @@ function RatingSelect({ select }) {
 					id="num5"
 					value="5"
 					onChange={handleChange}
-					selected={selected === 5}
+					checked={selected === 5}
 				/>
 				<label htmlFor="num5">5</label>
 			</li>
@@ -71,7 +79,7 @@ function RatingSelect({ select }) {
 					id="num6"
 					value="6"
 					onChange={handleChange}
-					selected={selected === 6}
+					checked={selected === 6}
 				/>
 				<label htmlFor="num6">6</label>
 			</li>
@@ -82,7 +90,7 @@ function RatingSelect({ select }) {
 					id="num7"
 					value="7"
 					onChange={handleChange}
-					selected={selected === 7}
+					checked={selected === 7}
 				/>
 				<label htmlFor="num7">7</label>
 			</li>
@@ -93,7 +101,7 @@ function RatingSelect({ select }) {
 					id="num8"
 					value="8"
 					onChange={handleChange}
-					selected={selected === 8}
+					checked={selected === 8}
 				/>
 				<label htmlFor="num8">8</label>
 			</li>
@@ -104,7 +112,7 @@ function RatingSelect({ select }) {
 					id="num9"
 					value="9"
 					onChange={handleChange}
-					selected={selected === 9}
+					checked={selected === 9}
 				/>
 				<label htmlFor="num9">9</label>
 			</li>
@@ -115,7 +123,7 @@ function RatingSelect({ select }) {
 					id="num10"
 					value="10"
 					onChange={handleChange}
-					selected={selected === 10}
+					checked={selected === 10}
 				/>
 				<label htmlFor="num10">10</label>
 			</li>
